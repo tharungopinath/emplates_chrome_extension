@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "NetworkFlow",
+  "name": "EmailTemplates",
   "version": "1.0",
   "description": "Email templates for networking.",
   "permissions": ["storage"],
