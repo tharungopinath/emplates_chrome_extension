@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Emplates Manager</title>
+    <link rel="stylesheet" href="options.css">
 </head>
 <body>
-    
+    <div class="header">
+        <h1>My Emplates</h1>
+    </div>
+
+    <div class="dashboardContainer">
+        
+        <div class="templateCard addCard" id="createNewButton">
+            <div class="plusIcon">+</div>
+        </div>
+
+        <div id="templateGrid"></div>
+    </div>
+
+    <div id="editorWindow" class="newWindow">
+        <div class="contentWindow">
+            <div id="windowTitle">Edit Emplate</div>
+            <input type="text" id="tempName" placeholder="Template Title">
+            <textarea id="tempBody" placeholder="Paste your email content here..."></textarea>
+            
+            <div class="windowButtons">
+                <button id="cancelButton">Cancel</button>
+                <button id="saveButton">Save Emplate</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="options.js"></script>
 </body>
 </html>
