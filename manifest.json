@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Emplates",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Save and insert email templates in Gmail and Outlook, boosting your productivity and optimizing your workflow.",
     "permissions": ["storage"],
     "icons": {
