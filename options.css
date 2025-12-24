@@ -37,7 +37,7 @@ body {
 
 .cardClickArea {
     flex-grow: 1; 
-    padding: 15px;
+    padding: 15px 15px 0 15px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
@@ -52,7 +52,7 @@ body {
 
 .cardActions {
     padding: 10px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #265c19;
     text-align: right; 
 }
 
@@ -60,6 +60,7 @@ body {
     background-color: transparent;
     border: none;
     color: #da1313;
+    z-index: 9999;
     cursor: pointer;
     font-size: 12px;
     transition: colour 0.2s;
@@ -82,14 +83,19 @@ body {
     word-break: break-word;     
     display: block;
     
-    max-height: 110px;        
+    max-height: 130px;        
     overflow-y: auto; 
     
     scrollbar-color: green transparent;
 }
 
 .cardContent strong {
+    display: block;
     color: rgb(2, 118, 2);
+    width: 100%;
+    white-space: nowrap;
+    overflow:  hidden; 
+    text-overflow: ellipsis;
 }
 
 .newWindow {

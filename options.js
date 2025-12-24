@@ -1,28 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('templateGrid');
-    const modal = document.getElementById('editorWindow');
-    const createBtn = document.getElementById('createNewButton');
-    const saveBtn = document.getElementById('saveButton');
-    const cancelBtn = document.getElementById('cancelButton');
+    const newWindow = document.getElementById('editorWindow');
+    const createButton = document.getElementById('createNewButton');
+    const saveButton = document.getElementById('saveButton');
+    const cancelButton = document.getElementById('cancelButton');
 
     let currentEditingIndex = null; 
 
     function render() {
         chrome.storage.sync.get("myTemplates", (data) => {
-            // FIX: Ensure we handle the old Object format if it exists
             let templates = data.myTemplates;
             if (!Array.isArray(templates)) {
-                templates = []; // Reset to array if it was an object
+                templates = [];
             }
 
             grid.innerHTML = '';
-            
-            // Use slice().reverse() to show recently added at the top
             templates.slice().reverse().forEach((template, index) => {
                 const card = document.createElement('div');
                 card.className = 'templateCard';
-                
-                // Calculate actual index because we reversed the display order
                 const actualIndex = templates.length - 1 - index;
 
                 card.innerHTML = `
@@ -36,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
 
                 card.querySelector('.cardClickArea').onclick = () => {
-                    openModal(template.name, template.body, actualIndex);
+                    openWindow(template.name, template.body, actualIndex);
                 };
 
                 card.querySelector('.deleteButton').onclick = () => {
-                    templates.splice(actualIndex, 1); // Use splice for arrays
+                    templates.splice(actualIndex, 1);
                     chrome.storage.sync.set({myTemplates: templates}, () => {
                         render();
                     });
@@ -50,25 +45,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function openModal(name, body, index = null) {
+    function openWindow(name, body, index = null) {
         document.getElementById('tempName').value = name;
         document.getElementById('tempBody').value = body;
         
-        document.getElementById('windowTitle').innerText = (name === '') ? "New Emplate" : "Edit Emplate";
+        if (name == '') {
+            document.getElementById("windowTitle").innerText = "New Emplate";
+        }
+        else {
+            document.getElementById("windowTitle").innerText = "Edit Emplate";
+        }
 
         currentEditingIndex = index; 
-        modal.style.display = 'flex';
+        newWindow.style.display = "flex";
     }
 
-    createBtn.onclick = () => {
-        openModal('', '');
+    createButton.onclick = () => {
+        openWindow('', '');
     };
 
-    cancelBtn.onclick = () => {
-        modal.style.display = 'none';
+    cancelButton.onclick = () => {
+        newWindow.style.display = 'none';
     };
 
-    saveBtn.onclick = () => {
+    saveButton.onclick = () => {
         const nameInput = document.getElementById('tempName').value;
         const bodyInput = document.getElementById('tempBody').value;
 
@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentEditingIndex !== null) {
                     templates[currentEditingIndex] = newEntry;
                 } else {
-                    templates.push(newEntry); // Now .push() will work
+                    templates.push(newEntry); 
                 }
 
                 chrome.storage.sync.set({myTemplates: templates}, () => {
-                    modal.style.display = 'none';
+                    newWindow.style.display = 'none';
                     render();
                 });
             });

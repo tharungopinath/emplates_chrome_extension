@@ -35,14 +35,12 @@ function createButton() {
         if (existingMenu) { existingMenu.remove(); return; }
 
         chrome.storage.sync.get("myTemplates", (data) => {
-            // UPDATED: Default to an empty Array instead of an Object
             const templates = Array.isArray(data.myTemplates) ? data.myTemplates : []; 
             const menu = document.createElement("div");
             menu.className = "templateMenu";
             menu.style.visibility = "hidden";
             document.body.appendChild(menu);
 
-            // Loop through the array and reverse for "Recently Added"
             templates.slice().reverse().forEach((template) => {
                 const item = document.createElement("button");
                 item.className = "templateItem";
@@ -53,8 +51,8 @@ function createButton() {
                      templateButton.closest("div[role='main']");
 
                     if (emailBox) {
-                        const body = emailBox.querySelector('div[role="textbox"][aria-label="Message body"]') || 
-                                    emailBox.querySelector('div[contenteditable="true"]');
+                        const body = emailBox.querySelector("div[role='textbox'][aria-label='Message body']") || 
+                                    emailBox.querySelector("div[contenteditable='true']");
                         if (body) {
                             body.focus();
                             document.execCommand("insertText", false, template.body);
@@ -65,7 +63,6 @@ function createButton() {
                 menu.appendChild(item);
             });
 
-            // Positioning logic remains the same
             const menuWidth = menu.offsetWidth;
             const menuHeight = menu.offsetHeight;
             const rect = templateButton.getBoundingClientRect();
@@ -94,7 +91,7 @@ function createButton() {
     return templateButton;
 }
 
-const observer = new MutationObserver((mutation) => {
+const observer = new MutationObserver(() => {
     checkForCompose();
 });
 

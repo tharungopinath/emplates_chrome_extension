@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById("toggle");
     const manageButton = document.getElementById("manageButton");
 
@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (toggle) {
-        toggle.addEventListener('change', () => {
+        toggle.addEventListener("change", () => {
             chrome.storage.sync.set({ isEnabled: toggle.checked });
         });
     }
 
     if (manageButton) {
-        manageButton.addEventListener('click', () => {
+        manageButton.addEventListener("click", () => {
             chrome.runtime.openOptionsPage();
         });
     }
