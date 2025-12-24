@@ -31,7 +31,7 @@ function checkForCompose() {
 
 function  createButton () {
     const templateButton = document.createElement("button");
-    templateButton.innerText = "Templates";
+    templateButton.innerText = "Emplates";
     templateButton.className = "myTemplates";
     const templates = {
         "Intro": "Hi, my name is ____. Nice to meet you!",
