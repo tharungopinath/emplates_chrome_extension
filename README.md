@@ -2,7 +2,7 @@
 
 > **Save hours of typing.** Manage, organize, and deploy reusable email templates instantly across Gmail and Outlook.
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat-square&logo=google-chrome)](https://chrome.google.com)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat-square&logo=google-chrome)](https://chromewebstore.google.com/detail/ffjcgkbendaloplpegdielmjhanlcleh?utm_source=item-share-cb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 ---
@@ -23,7 +23,9 @@
 ## 📦 Installation
 
 ### From Chrome Web Store
-Visit the [Chrome Web Store](#) and click **Add to Chrome**.
+Visit the link on the [Chrome Web Store](https://chromewebstore.google.com/detail/ffjcgkbendaloplpegdielmjhanlcleh?utm_source=item-share-cb) and click **Add to Chrome**.
+
+> **`Note`**: Because Emplates is a **new extension**, you may see a "Proceed with caution" warning during installation. This is a **standard** Google security measure for new developers. **You can safely click "Continue to install" to finish the setup!**
 
 ### Manual Installation (Developer Mode)
 1. Clone or download this repository:
@@ -36,7 +38,7 @@ Visit the [Chrome Web Store](#) and click **Add to Chrome**.
 
 3. Enable **Developer mode** (top-right corner)
 
-4. Click **Load unpacked** and select the `email-templates-extension` folder
+4. Click **Load unpacked** and select the `emplates_chrome_extension` folder
 
 5. The extension icon will appear in your toolbar – you're ready to go!
 
