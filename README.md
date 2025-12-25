@@ -3,7 +3,6 @@
 > **Save hours of typing.** Manage, organize, and deploy reusable email templates instantly across Gmail and Outlook.
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-4285F4?style=flat-square&logo=google-chrome)](https://chromewebstore.google.com/detail/ffjcgkbendaloplpegdielmjhanlcleh?utm_source=item-share-cb)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 ---
 
@@ -103,7 +102,7 @@ email-templates-extension/
 ├── options.js             # Template CRUD operations
 ├── options.css            # Options page styling
 ├── README.md              # This file
-├── LICENSE                # MIT License
+├── LICENSE                # Creative Commons Attribution-NonCommercial 4.0 International License
 └── icons/                 # Extension icons (128x128, 48x48, 16x16)
 ```
 
@@ -208,9 +207,23 @@ Contributions are welcome! To get started:
 
 ## 📝 License
 
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International** – see the [LICENSE](LICENSE) file for details.
 
-You're free to use, modify, and distribute this extension for personal or commercial purposes.
+You are free to:
+
+- Share — copy and redistribute the material in any medium or format.
+
+- Adapt — remix, transform, and build upon the material.
+
+Under the following terms:
+
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+
+- NonCommercial — You may not use the material for commercial purposes.
+
+- No Warranties: This code is provided "as-is" without any warranty of any kind. The author is not liable for any claims or damages.
+
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
 
 ---
 
